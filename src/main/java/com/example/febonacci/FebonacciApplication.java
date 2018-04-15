@@ -1,6 +1,5 @@
 package com.example.febonacci;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.math.BigInteger;
@@ -9,28 +8,25 @@ import java.math.BigInteger;
 public class FebonacciApplication {
 
     public static void main(String[] args) {
-        // SpringApplication.run (FebonacciApplication.class, args);
-        for (int i = 0; i <= 100; i++) {
-            System.out.println (febonacci (i));
-        }
-
+        febonacci1 (100);
     }
 
-    private static BigInteger febonacci(int number) {
-        BigInteger a = new BigInteger ("1");
+    private static void febonacci1(int number) {
+        BigInteger a = new BigInteger ("0");
         BigInteger b = new BigInteger ("1");
-        BigInteger c = new BigInteger ("0");
-        if (number == 0) {
-            return c;
-        }
-        if (number == 1 || number == 2) {
-            return a;
-        }
-        for (int i = 3; i <= number; i++) {
+        BigInteger c = new BigInteger ("1");
+        StringBuilder sb = new StringBuilder ();
+
+        for (int i = 0; i <= number; i++) {
+            if (i == 0) {
+                sb.append ("0;");
+                continue;
+            }
+            sb.append (a.add (b) + ";");
             c = a.add (b);
             a = b;
             b = c;
         }
-        return c;
+        System.out.println (sb.toString ());
     }
 }
