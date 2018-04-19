@@ -19,7 +19,7 @@ Smart Code
 ------
 4 input any 3 number and order by desc
 > you can by bubble sort
->eg: intput 1,4,8  then print 8,4,1
+> eg: intput 1,4,8  then print 8,4,1
 
------ 
+
  
